@@ -1,0 +1,7 @@
+
+# Compiled
+targe/
+
+# Idea files
+.idea/
+mvn_intro.iml
