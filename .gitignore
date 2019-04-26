@@ -1,7 +1,7 @@
 
 # Compiled
-targe/
+target/
 
 # Idea files
 .idea/
-mvn_intro.iml
+*.iml
