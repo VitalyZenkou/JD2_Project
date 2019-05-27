@@ -15,7 +15,8 @@
 </head>
 <body>
 <c:forEach var="user" items="${requestScope.users}">
-    <p><c:out value="User id:${user.id} name :${user.name}"></c:out></p>
+    <p><c:out value="User id:${user.id} name :${user.name} suername:${user.surname}
+    login:${user.login} birth date:${user.birthDate}"></c:out></p>
 </c:forEach>
 </body>
 </html>
