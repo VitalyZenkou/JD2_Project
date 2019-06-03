@@ -6,8 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -37,6 +35,5 @@ public class Role extends BaseEntity<Long> {
     @JoinTable(name = "user_role", schema = "payment_system_storage",
             joinColumns = @JoinColumn(name = "role_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
-    @LazyCollection(LazyCollectionOption.FALSE)
     private List<User> users;
 }

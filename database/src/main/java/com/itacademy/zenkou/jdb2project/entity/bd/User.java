@@ -59,7 +59,6 @@ public class User extends BaseEntity<Long> {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-//    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Payment> payments;
 
     @ManyToMany(cascade = CascadeType.ALL)
@@ -67,6 +66,5 @@ public class User extends BaseEntity<Long> {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Role> roles;
 }

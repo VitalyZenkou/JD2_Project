@@ -7,10 +7,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -49,7 +45,5 @@ public class BankAccount extends BaseEntity<Long> {
     private Currency currency;
 
     @OneToMany(mappedBy = "bankAccount", cascade = CascadeType.ALL)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @LazyCollection(LazyCollectionOption.FALSE)
     private List<CreditCard> creditCards;
 }

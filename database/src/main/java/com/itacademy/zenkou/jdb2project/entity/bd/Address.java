@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
@@ -29,7 +28,7 @@ import javax.persistence.UniqueConstraint;
                 columnNames = {"city", "street", "house_number", "phone_number", "user_id"})})
 public class Address extends BaseEntity<Long> {
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
