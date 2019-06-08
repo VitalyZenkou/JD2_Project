@@ -1,4 +1,4 @@
-package com.itacademy.zenkou.jdb2project.entity.bd;
+package com.itacademy.zenkou.jdb2project.entity.db;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,8 +6,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -29,7 +27,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @ToString(exclude = {"addresses", "bankAccounts", "payments", "roles"})
 @Entity
-@Table(name = "user", schema = "payment_system_storage")
+@Table(name = "user_", schema = "payment_system_storage")
 public class User extends BaseEntity<Long> {
 
     @Column(name = "login", unique = true, nullable = false, length = 50)
@@ -49,12 +47,10 @@ public class User extends BaseEntity<Long> {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Address> addresses;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @LazyCollection(LazyCollectionOption.FALSE)
     private List<BankAccount> bankAccounts;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

@@ -1,4 +1,4 @@
-package com.itacademy.zenkou.jdb2project.entity.bd;
+package com.itacademy.zenkou.jdb2project.entity.db;
 
 import com.itacademy.zenkou.jdb2project.entity.CreditCardType;
 import lombok.AllArgsConstructor;
@@ -7,8 +7,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -55,6 +53,5 @@ public class CreditCard extends BaseEntity<Long> {
     private CreditCardType creditCardType;
 
     @OneToMany(mappedBy = "creditCard", cascade = CascadeType.ALL)
-    @LazyCollection(LazyCollectionOption.FALSE)
     private List<Payment> payments;
 }

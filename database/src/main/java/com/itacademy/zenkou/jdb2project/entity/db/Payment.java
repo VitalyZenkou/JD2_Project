@@ -1,4 +1,4 @@
-package com.itacademy.zenkou.jdb2project.entity.bd;
+package com.itacademy.zenkou.jdb2project.entity.db;
 
 
 import lombok.AllArgsConstructor;

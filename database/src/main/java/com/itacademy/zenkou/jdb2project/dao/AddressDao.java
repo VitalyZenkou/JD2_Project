@@ -1,6 +1,6 @@
 package com.itacademy.zenkou.jdb2project.dao;
 
-import com.itacademy.zenkou.jdb2project.entity.bd.Address;
+import com.itacademy.zenkou.jdb2project.entity.db.Address;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

@@ -1,6 +1,6 @@
 package com.itacademy.zenkou.jdb2project.dao;
 
-import com.itacademy.zenkou.jdb2project.entity.bd.BankAccount;
+import com.itacademy.zenkou.jdb2project.entity.db.BankAccount;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

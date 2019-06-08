@@ -13,11 +13,11 @@
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">create-drop</property>
 
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.User"/>
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.Address"/>
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.BankAccount"/>
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.Payment"/>
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.Role"/>
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.CreditCard"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.User"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.CreditCard"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.Address"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.BankAccount"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.Payment"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.Role"/>
     </session-factory>
 </hibernate-configuration>

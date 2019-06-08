@@ -1,6 +1,6 @@
 package com.itacademy.zenkou.jdb2project.dao;
 
-import com.itacademy.zenkou.jdb2project.entity.bd.Payment;
+import com.itacademy.zenkou.jdb2project.entity.db.Payment;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

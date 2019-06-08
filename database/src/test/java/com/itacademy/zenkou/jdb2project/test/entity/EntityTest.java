@@ -1,18 +1,14 @@
-package com.itacademy.zenkou.jdb2project.test;
+package com.itacademy.zenkou.jdb2project.test.entity;
 
 import com.itacademy.zenkou.jdb2project.dao.UserDao;
-import com.itacademy.zenkou.jdb2project.entity.CreditCardType;
-import com.itacademy.zenkou.jdb2project.entity.Currency;
-import com.itacademy.zenkou.jdb2project.entity.UserRoleType;
-import com.itacademy.zenkou.jdb2project.entity.bd.Address;
-import com.itacademy.zenkou.jdb2project.entity.bd.BankAccount;
-import com.itacademy.zenkou.jdb2project.entity.bd.BaseEntity;
-import com.itacademy.zenkou.jdb2project.entity.bd.CreditCard;
-import com.itacademy.zenkou.jdb2project.entity.bd.Payment;
-import com.itacademy.zenkou.jdb2project.entity.bd.Role;
-import com.itacademy.zenkou.jdb2project.entity.bd.User;
+import com.itacademy.zenkou.jdb2project.entity.db.Address;
+import com.itacademy.zenkou.jdb2project.entity.db.BankAccount;
+import com.itacademy.zenkou.jdb2project.entity.db.BaseEntity;
+import com.itacademy.zenkou.jdb2project.entity.db.CreditCard;
+import com.itacademy.zenkou.jdb2project.entity.db.Payment;
+import com.itacademy.zenkou.jdb2project.entity.db.Role;
+import com.itacademy.zenkou.jdb2project.entity.db.User;
 import com.itacademy.zenkou.jdb2project.utils.ConnectionManager;
-import com.itacademy.zenkou.jdb2project.utils.CreditCardDataGenerator;
 import com.itacademy.zenkou.jdb2project.validator.EntityValidator;
 import org.hibernate.Session;
 import org.testng.annotations.AfterMethod;
@@ -20,10 +16,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Collections;
 
+import static com.itacademy.zenkou.jdb2project.util.EntityCreatorUtil.getAddress;
+import static com.itacademy.zenkou.jdb2project.util.EntityCreatorUtil.getBankAccount;
+import static com.itacademy.zenkou.jdb2project.util.EntityCreatorUtil.getCreditCard;
+import static com.itacademy.zenkou.jdb2project.util.EntityCreatorUtil.getPayment;
+import static com.itacademy.zenkou.jdb2project.util.EntityCreatorUtil.getRole;
+import static com.itacademy.zenkou.jdb2project.util.EntityCreatorUtil.getUser;
 import static org.testng.Assert.assertNotNull;
 
 public class EntityTest {
@@ -39,54 +39,12 @@ public class EntityTest {
     @BeforeMethod
     public void initTestData() {
         session = ConnectionManager.getSession();
-
-        savedUser = User.builder()
-                .login("vasia")
-                .name("Vasia")
-                .password("1234")
-                .surname("Pupkin")
-                .birthDate(LocalDate.of(1988, 10, 10))
-                .build();
-
-        savedAddress = Address.builder()
-                .user(savedUser)
-                .email("123123@gmail.com")
-                .phoneNumber("+375293959859")
-                .physicalAddress(Address.PhysicalAddress.builder()
-                        .city("Minsk")
-                        .street("Pushkina")
-                        .houseNumber(38)
-                        .flatNumber(10)
-                        .build())
-                .build();
-
-        savedBankAccount = BankAccount.builder()
-                .user(savedUser)
-                .balance(new BigDecimal(100))
-                .currency(Currency.BYR)
-                .isBlocked(false)
-                .build();
-
-        savedCreditCard = CreditCard.builder()
-                .creditCardType(CreditCardType.VISA)
-                .bankAccount(savedBankAccount)
-                .cvv(CreditCardDataGenerator.generateCvv())
-                .isBlocked(false)
-                .number(CreditCardDataGenerator.generateCreditCardNumber())
-                .pinCode(CreditCardDataGenerator.generatePinCode())
-                .validityDate("12/20")
-                .build();
-
-        savedPayment = Payment.builder()
-                .bigDecimal(new BigDecimal(5))
-                .creditCard(savedCreditCard)
-                .isTransaction(false)
-                .organization("bla-bla-bla")
-                .build();
-
-        savedRole = Role.builder()
-                .userRoleType(UserRoleType.SUPER_ADMIN)
-                .build();
+        savedUser = getUser();
+        savedAddress = getAddress();
+        savedBankAccount = getBankAccount();
+        savedCreditCard = getCreditCard();
+        savedPayment = getPayment();
+        savedRole = getRole();
     }
 
     @AfterMethod

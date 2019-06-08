@@ -1,7 +1,8 @@
 package com.itacademy.zenkou.jdb2project.service.UserService;
 
 import com.itacademy.zenkou.jdb2project.dao.UserDao;
-import com.itacademy.zenkou.jdb2project.entity.bd.User;
+import com.itacademy.zenkou.jdb2project.entity.db.User;
+import com.itacademy.zenkou.jdb2project.utils.filter.UserFilter;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -23,5 +24,9 @@ public class UserService {
 
     public List<User> getUsers() {
         return UserDao.getInstance().getAll();
+    }
+
+    public List<User> getUserByUserFilter(UserFilter userFilter) {
+        return UserDao.getInstance().getUsersByUserFilter(userFilter);
     }
 }

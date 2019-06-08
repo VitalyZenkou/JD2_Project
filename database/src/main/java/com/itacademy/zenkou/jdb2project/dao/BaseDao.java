@@ -1,6 +1,6 @@
 package com.itacademy.zenkou.jdb2project.dao;
 
-import com.itacademy.zenkou.jdb2project.entity.bd.BaseEntity;
+import com.itacademy.zenkou.jdb2project.entity.db.BaseEntity;
 import lombok.Cleanup;
 import org.hibernate.Session;
 
@@ -23,7 +23,8 @@ public interface BaseDao<T extends Serializable, E extends BaseEntity<T>> {
     }
 
     default Optional<E> get(T id) {
-        return Optional.ofNullable(getSession().get(getClazz(), id));
+        @Cleanup Session session = getSession();
+        return Optional.ofNullable(session.get(getClazz(), id));
     }
 
     default void update(E entity) {

@@ -1,11 +1,11 @@
 package com.itacademy.zenkou.jdb2project.validator;
 
-import com.itacademy.zenkou.jdb2project.entity.bd.Address;
-import com.itacademy.zenkou.jdb2project.entity.bd.BankAccount;
-import com.itacademy.zenkou.jdb2project.entity.bd.CreditCard;
-import com.itacademy.zenkou.jdb2project.entity.bd.Payment;
-import com.itacademy.zenkou.jdb2project.entity.bd.Role;
-import com.itacademy.zenkou.jdb2project.entity.bd.User;
+import com.itacademy.zenkou.jdb2project.entity.db.Address;
+import com.itacademy.zenkou.jdb2project.entity.db.BankAccount;
+import com.itacademy.zenkou.jdb2project.entity.db.CreditCard;
+import com.itacademy.zenkou.jdb2project.entity.db.Payment;
+import com.itacademy.zenkou.jdb2project.entity.db.Role;
+import com.itacademy.zenkou.jdb2project.entity.db.User;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

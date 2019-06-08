@@ -5,19 +5,20 @@
 <hibernate-configuration>
     <session-factory>
         <property name="connection.url">jdbc:postgresql://localhost:5432/payment_system</property>
-        <property name="dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password">root</property>
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
+        <property name="default_schema">payment_system_storage</property>
 
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.User"/>
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.Address"/>
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.BankAccount"/>
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.CreditCard"/>
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.Payment"/>
-        <mapping class="com.itacademy.zenkou.jdb2project.entity.bd.Role"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.User"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.Address"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.BankAccount"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.CreditCard"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.Payment"/>
+        <mapping class="com.itacademy.zenkou.jdb2project.entity.db.Role"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
     </session-factory>

@@ -11,8 +11,7 @@ CREATE TABLE "user"
     password   VARCHAR(300) NOT NULL,
     name       VARCHAR(50)  NOT NULL,
     surname    VARCHAR(50)  NOT NULL,
-    birth_date DATE         NOT NULL,
-    UNIQUE (name, surname)
+    birth_date DATE         NOT NULL
 );
 
 CREATE TABLE role
