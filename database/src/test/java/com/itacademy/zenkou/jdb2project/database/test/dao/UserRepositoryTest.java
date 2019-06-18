@@ -1,5 +1,6 @@
 package com.itacademy.zenkou.jdb2project.database.test.dao;
 
+import com.google.common.collect.Lists;
 import com.itacademy.zenkou.jdb2project.database.entity.db.User;
 import com.itacademy.zenkou.jdb2project.database.repository.UserRepository;
 import com.itacademy.zenkou.jdb2project.database.test.BaseTest;
@@ -54,7 +55,7 @@ public class UserRepositoryTest extends BaseTest {
     public void checkGetAllUsers() {
         List<User> users = creatorUtil.getUsers();
         users.forEach(user -> userRepository.save(user));
-        List<User> gotUsers = (List<User>) userRepository.findAll();
+        List<User> gotUsers = Lists.newArrayList(userRepository.findAll());
         assertEquals(users.size(), gotUsers.size());
     }
 

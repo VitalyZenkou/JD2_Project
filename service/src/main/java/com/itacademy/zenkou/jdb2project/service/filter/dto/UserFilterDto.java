@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 public class UserFilterDto extends BaseFilterDto {
 
@@ -11,10 +12,10 @@ public class UserFilterDto extends BaseFilterDto {
     private static final int MONTH = 1;
     private static final int DAY = 1;
     @Getter
-    private String name;
+    private final String name;
     @Getter
-    private String surname;
-    private String birthDate;
+    private final String surname;
+    private final String birthDate;
 
     @Builder
     public UserFilterDto(String limit, String offset, String name, String surname, String birthDate) {
