@@ -9,14 +9,14 @@ import com.itacademy.zenkou.jdb2project.database.entity.db.Role;
 import com.itacademy.zenkou.jdb2project.database.entity.db.User;
 import com.itacademy.zenkou.jdb2project.database.test.BaseTest;
 import com.itacademy.zenkou.jdb2project.database.validator.EntityValidator;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import javax.persistence.EntityManager;
+import java.util.Arrays;
 import java.util.Collections;
-
-import static org.testng.AssertJUnit.assertNotNull;
 
 public class EntityTest extends BaseTest {
 
@@ -145,18 +145,14 @@ public class EntityTest extends BaseTest {
     }
 
     private void checkIdCommitAndClear(Long... ids) {
-        for (Long id : ids) {
-            assertNotNull(id);
-        }
+        Arrays.stream(ids).forEach(Assert::assertNotNull);
         entityManager.getTransaction().commit();
         entityManager.clear();
     }
 
     @SuppressWarnings("unchecked")
     private void refreshEntity(BaseEntity... entities) {
-        for (BaseEntity entity : entities) {
-            entity.setId(null);
-        }
+        Arrays.stream(entities).forEach(entity -> entity.setId(null));
     }
 
     @SuppressWarnings("unchecked")

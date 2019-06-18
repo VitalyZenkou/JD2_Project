@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan("com.itacademy.zenkou.jdb2project.service.service")
+@ComponentScan({"com.itacademy.zenkou.jdb2project.service.service",
+        "com.itacademy.zenkou.jdb2project.service.mapper"})
 @Import(DatabaseConfig.class)
 @EnableTransactionManagement
 public class ServiceConfig {
