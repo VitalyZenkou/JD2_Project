@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.time.LocalDate;
 import java.util.Optional;
 
-public class UserFilterDTO extends BaseFilterDTO {
+public class UserFilterDto extends BaseFilterDto {
 
     private static final int YEAR = 1900;
     private static final int MONTH = 1;
@@ -18,7 +18,7 @@ public class UserFilterDTO extends BaseFilterDTO {
     private final String birthDate;
 
     @Builder
-    public UserFilterDTO(String limit, String offset, String name, String surname, String birthDate) {
+    public UserFilterDto(String limit, String offset, String name, String surname, String birthDate) {
         super(limit, offset);
         this.name = name;
         this.surname = surname;
@@ -26,7 +26,7 @@ public class UserFilterDTO extends BaseFilterDTO {
     }
 
     public LocalDate getBirthDate() {
-        return Optional.of(birthDate).isPresent() ? (birthDate.isEmpty() ? LocalDate.of(YEAR, MONTH, DAY)
-                : LocalDate.parse(birthDate)) : LocalDate.of(YEAR, MONTH, DAY);
+        return birthDate.isEmpty() ? LocalDate.of(YEAR, MONTH, DAY)
+                : LocalDate.parse(birthDate);
     }
 }

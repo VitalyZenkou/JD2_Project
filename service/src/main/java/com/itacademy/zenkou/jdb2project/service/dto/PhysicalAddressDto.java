@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class PhysicalAddressDTO extends BaseDTO {
+public class PhysicalAddressDto implements MarkerDto {
     private String city;
     private String street;
     private int houseNumber;

@@ -9,6 +9,15 @@ div.form-group label {
     height: 15px;
 }
 
-body {
-    blackgroud-color: lightblue;
+body.user {
+    blackgroud-color: lightblue
+}
+
+
+div.table th {
+    text-align: center;
+}
+
+div.table td {
+    text-align: center;
 }

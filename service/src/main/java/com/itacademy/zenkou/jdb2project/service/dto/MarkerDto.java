@@ -1,4 +1,5 @@
 package com.itacademy.zenkou.jdb2project.service.dto;
 
-public abstract class BaseDTO {
+public interface MarkerDto {
+    //a marker interface
 }

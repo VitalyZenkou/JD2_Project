@@ -3,6 +3,7 @@ package com.itacademy.zenkou.jdb2project.service.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,20 +15,21 @@ import java.util.Collection;
 import java.util.List;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class UserDTO extends BaseDTO implements UserDetails {
+public class UserDto extends BaseDto<Long> implements UserDetails {
 
     private String login;
     private String password;
     private String name;
     private String surname;
     private LocalDate birthDate;
-    private List<AddressDTO> addresses;
-    private List<BankAccountDTO> bankAccounts;
-    private List<PaymentDTO> payments;
-    private List<RoleDTO> roles;
+    private List<AddressDto> addresses;
+    private List<BankAccountDto> bankAccounts;
+    private List<PaymentDto> payments;
+    private List<RoleDto> roles;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

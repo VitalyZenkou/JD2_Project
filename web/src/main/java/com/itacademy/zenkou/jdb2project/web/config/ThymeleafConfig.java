@@ -6,6 +6,7 @@ import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+import org.thymeleaf.templatemode.TemplateMode;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -18,6 +19,8 @@ public class ThymeleafConfig {
         resolver.setCharacterEncoding(UTF_8.name());
         resolver.setPrefix("/WEB-INF/view/");
         resolver.setSuffix(".html");
+        resolver.setTemplateMode(TemplateMode.HTML);
+        resolver.setCacheable(false);
         return resolver;
     }
 

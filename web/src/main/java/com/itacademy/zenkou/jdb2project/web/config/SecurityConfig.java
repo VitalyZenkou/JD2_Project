@@ -34,12 +34,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/" + ADMIN, "/" + USER)
-                    .hasAnyAuthority(adminPageAvailable)
-                .antMatchers("/" + HOME)
-                    .hasAnyAuthority(homePageAvailable)
-                .anyRequest()
-                    .permitAll()
+                    .antMatchers("/" + ADMIN, "/" + USER)
+                        .hasAnyAuthority(adminPageAvailable)
+                    .antMatchers("/" + HOME)
+                        .hasAnyAuthority(homePageAvailable)
+                    .anyRequest()
+                        .permitAll()
                 .and()
                     .formLogin()
                         .usernameParameter(LOGIN)
