@@ -74,7 +74,6 @@ public class EntityValidator {
     public static void validateUserRole(Role role, User user) {
         assertNotNull(role, sendMessageForEntity("Role"));
         assertEquals(user.getRoles().size(), 1, sendMessage("User", "role"));
-        assertEquals(role.getUsers().size(), 1, sendMessage("Role", "users"));
         assertNotNull(role.getUserRoleType(), "User role");
     }
 

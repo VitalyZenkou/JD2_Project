@@ -8,3 +8,16 @@ div.form-group label {
     width: 100px;
     height: 15px;
 }
+
+body.user {
+    blackgroud-color: lightblue
+}
+
+
+div.table th {
+    text-align: center;
+}
+
+div.table td {
+    text-align: center;
+}

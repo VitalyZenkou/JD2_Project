@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-class BaseFilterDto {
+public class BaseFilterDto {
 
     private final String limit;
     private final String offset;

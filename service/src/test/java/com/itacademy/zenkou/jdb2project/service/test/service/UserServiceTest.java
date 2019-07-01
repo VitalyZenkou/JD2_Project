@@ -1,6 +1,6 @@
 package com.itacademy.zenkou.jdb2project.service.test.service;
 
-import com.itacademy.zenkou.jdb2project.database.entity.db.User;
+import com.itacademy.zenkou.jdb2project.service.dto.UserDto;
 import com.itacademy.zenkou.jdb2project.service.filter.dto.UserFilterDto;
 import com.itacademy.zenkou.jdb2project.service.service.UserService;
 import com.itacademy.zenkou.jdb2project.service.test.BaseTest;
@@ -19,12 +19,11 @@ public class UserServiceTest extends BaseTest {
 
     @Test
     public void testUserService() {
-
         UserFilterDto userFilterDto = UserFilterDto.builder()
                 .birthDate("")
                 .name("petia")
                 .build();
-        List<User> users = userService.getUsersByFilter(userFilterDto);
+        List<UserDto> users = userService.getUsersByFilter(userFilterDto);
         assertThat(users, hasSize(5));
     }
 }
