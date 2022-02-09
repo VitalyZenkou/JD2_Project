@@ -11,7 +11,7 @@
     </parent>
 
     <properties>
-        <hibernate.version>5.4.2.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
         <querydsl.version>4.2.1</querydsl.version>
     </properties>
 
