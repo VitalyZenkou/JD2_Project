@@ -17,7 +17,7 @@
     <properties>
         <java.version>8</java.version>
         <file.encdin>UTF-8</file.encdin>
-        <org.spring.version>5.1.7.RELEASE</org.spring.version>
+        <org.spring.version>5.3.18</org.spring.version>
     </properties>
 
     <dependencies>
